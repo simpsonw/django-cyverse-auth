@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 from django_cyverse_auth import __version__
 
 
-requirements = open("requirements.txt").read()
+requirements = open("requirements.txt").readlines()
 
 
 if sys.argv[-1] == 'publish':
@@ -37,6 +37,7 @@ setup(
     author_email='atmodevs@gmail.com',
     description="Authentication support for CyVerse Django applications.",
     install_requires=requirements,
+    dependency_links=["git+https://github.com/simpsonw/jwt.py@use_pycryptodome#egg=jwt.py"],
     license="BSD License, 3 clause",
     packages=find_packages(),
     url="https://github.com/CyVerse/django-cyverse-auth",
